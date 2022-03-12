@@ -53,7 +53,6 @@
 			<li><a href="{{ path('home') }}">Welcome</a></li>
 			<li><a href="{{ path('menu') }}">Menu</a></li>
 			<li><a href="{{ path('order') }}">Order</a></li>
-			<li><a href="contact.html">Contact</a></li>
 			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<li><a href="#">Employee</a>
 				<ul class="sub-menu">
@@ -120,9 +119,8 @@
 						</div>
 						<div class="col-sm-4">
 							<div class="footer-widget">
-								<h2>Contact</h2>
+								<h2>Login</h2>
 								<ul>
-									<li><a href="">Imprint</a></li>
 									<li><a href="{{ path('app_login') }}">Login</a></li>
 								</ul>
 							</div>

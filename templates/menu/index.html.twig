@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% for message in app.flashes('order') %}
+    <div class="alert alert-success">
+        <h3> {{ message }} </h3>
+    </div>
+{% endfor %}
+
+<section class="playlist-section spad">
+		<div class="container-fluid">
+			<div class="section-title">
+				<h2>Menu Card</h2>
+			</div>
+			<div class="container">
+				<ul class="playlist-filter controls">
+					<li class="control" data-filter=".Drink">Drinks</li>
+					<li class="control" data-filter=".Starter">Starters</li>
+					<li class="control" data-filter=".Main">Main dishes</li>
+					<li class="control" data-filter=".Deserts">Deserts</li>
+					<li class="control" data-filter="all">All Dishes</li>
+				</ul>
+			</div>                                              
+			<div class="clearfix"></div>
+			<div class="row playlist-area">
+
+            {% for dishes in dishes %}
+                <div class="mix col-lg-3 col-md-4 col-sm-6 {{dishes.category}}">
+					<div class="playlist-item">
+						<img src="{{asset('img/' ~ dishes.image)}}">
+						<h5>{{dishes.name}} - EUR {{dishes.price}}</h5>
+                        <p>OrderNr. {{dishes.id}}</p>
+                        <a class="btn btn-outline-danger btn-sm" href={{ path('ordering',{id: dishes.id})}}
+                        role="button">Order</a>
+					</div>
+				</div>
+            {% endfor %}
+
+			</div>
+		</div>
+	</section>
+{% endblock %}

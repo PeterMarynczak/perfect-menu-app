@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>{{firstDish.name}}</span>!</h2>
+								<p>Taste it, {{firstDish.description}} only for {{firstDish.price}}!
+								Only as a Dish Of the Day.</p>
+								<a href="{{ path('home') }}" class="site-btn">Menu Card</a>
+								<a href="{{ path('ordering',{id: firstDish.id })}}" class="site-btn sb-c2">Order</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="{{asset('img/' ~ firstDish.image)}}" class="rounded-circle">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>{{secondDish.name}}</span>!</h2>
+								<p>Taste it, {{secondDish.description}} only for {{secondDish.price}}!
+								Exclusively with a Dish Of the Day.</p>
+								<a href="{{ path('home') }}" class="site-btn">Menu Card</a>
+								<a href="{{ path('ordering',{id: secondDish.id })}}" class="site-btn sb-c2">Order</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">		
+								<img src="{{asset('img/' ~ secondDish.image)}}" class="rounded-circle">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+{% endblock %}

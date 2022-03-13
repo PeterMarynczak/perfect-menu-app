@@ -53,6 +53,7 @@
 			<li><a href="{{ path('home') }}">Welcome</a></li>
 			<li><a href="{{ path('menu') }}">Menu</a></li>
 			<li><a href="{{ path('order') }}">Order</a></li>
+			<li><a href="{{ path('mail') }}">Waiter</a></li>
 			{% if is_granted('IS_AUTHENTICATED_FULLY') %}
 			<li><a href="#">Employee</a>
 				<ul class="sub-menu">
@@ -100,9 +101,9 @@
 							<div class="footer-widget">
 								<h2>About us</h2>
 								<ul>
-									<li><a href="">Welcome</a></li>
-									<li><a href="">Menu</a></li>
-									<li><a href="">Order</a></li>
+									<li><a href="{{ path('home') }}">Welcome</a></li>
+									<li><a href="{{ path('menu') }}">Menu</a></li>
+									<li><a href="{{ path('order') }}">Order</a></li>
 								</ul>
 							</div>
 						</div>
